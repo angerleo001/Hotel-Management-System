@@ -12,7 +12,7 @@ public class Login extends JFrame implements ActionListener {
     public Login(){
         //Frame size and location
         setTitle("Hotel Name");
-        setLocationRelativeTo(null);//Center the frame on the screen
+        //setLocationRelativeTo(null);//Center the frame on the screen
         setSize(1366, 768);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
