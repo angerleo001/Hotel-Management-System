@@ -2,10 +2,12 @@ import java.sql.*;
 
 public class Connect {
     Connection c;
-    public Connect() {
+    Statement s;
+    public Connect(){
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            c = DriverManager;
+            c = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotelaps", "root" , "@ngerleo001");
+            s = c.createStatement();
         }catch (Exception e){
             e.printStackTrace();
         }
