@@ -1,6 +1,7 @@
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
     JLabel l1, l2, l3, img1, img2, usr, pass;
@@ -101,10 +102,23 @@ public class Login extends JFrame implements ActionListener {
             JOptionPane.showMessageDialog(null, "Contact APS To Recover Password");
             System.exit(0);
         } else if (ae.getSource() == b1) {
-            setVisible(false);// This will hide the login frame
             // Implement login logic here
-            new Dashboard();
-
+            String user = usrn.getText();
+            String password = passw.getText();
+            try{
+                Connect c = new Connect();
+                String query = "select * from login where usrnme = '" + user +"' and pwr ='"+ password +"'";
+                ResultSet rs = c.s.executeQuery(query);
+                if (rs.next()){
+                    setVisible(false);// This will hide the login frame
+                    new Dashboard();
+                }else{
+                    JOptionPane.showMessageDialog(null,"Error username or password");
+                    System.exit(0);
+                }
+            }catch (Exception k){
+                k.printStackTrace();
+            }
         }
     }
     public static void main(String[] args){
