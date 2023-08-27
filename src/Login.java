@@ -11,22 +11,22 @@ public class Login extends JFrame implements ActionListener {
         //Frame size and location
         setTitle("Hotel Name");
         setLocationRelativeTo(null);//Center the frame on the screen
-        setSize(1026 ,511);
+        setSize(1366, 768);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(null);
 
         //Icons and Images
         ImageIcon i1  = new ImageIcon(ClassLoader.getSystemResource("Icons/lock.jpg"));
-        Image i2 = i1.getImage().getScaledInstance(1026,511,Image.SCALE_DEFAULT);
+        Image i2 = i1.getImage().getScaledInstance(1366, 768,Image.SCALE_DEFAULT);
         ImageIcon i3 = new ImageIcon(i2);
         img1 = new JLabel(i3);
-        img1.setBounds(0, 0, 1026 ,511);
+        img1.setBounds(0, 0, 1366, 768);
         add(img1);
 
         ImageIcon i4 = new ImageIcon(ClassLoader.getSystemResource("Icons/landscape-Sun.jpg"));
         img2 = new JLabel(i4);
-        img2.setBounds(360,90,350,491);
+        img2.setBounds(500,90,350,491);
         img1.add(img2);
 
         //Labels
