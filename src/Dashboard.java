@@ -1,8 +1,9 @@
 //Contact me on instagram : angerleo001
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Dashboard extends JFrame {
+public class Dashboard extends JFrame implements ActionListener {
     JLabel img3, l4, l10;
     JMenuBar m1;
     JMenu mb1, mb2;
@@ -11,6 +12,7 @@ public class Dashboard extends JFrame {
     Dashboard() {
         // Frame for Dashboard
         setTitle("Dashboard");
+        //setLocationRelativeTo(null);
         setBounds(0, 0, 1366, 768);
         setVisible(true);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -56,13 +58,21 @@ public class Dashboard extends JFrame {
         mb1.add(mi1);
 
         ami1 = new JMenuItem("Add Employee");
+        ami1.addActionListener(this);
         mb2.add(ami1);
+
 
         ami2 = new JMenuItem("Add Room");
         mb2.add(ami2);
 
         ami3 = new JMenuItem("Add Driver");
         mb2.add(ami3);
+    }
+    public void actionPerformed(ActionEvent ae){
+        if (ae.getSource() == ami1){
+            setVisible(false);
+            new AddEmp();
+        }
 
     }
 
