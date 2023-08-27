@@ -4,7 +4,8 @@ import java.awt.*;
 public class Dashboard extends JFrame {
     JLabel img3, l4, l10;
     JMenuBar m1;
-    JMenu mb1;
+    JMenu mb1, mb2;
+    JMenuItem mi1, mi2, mi3, ami1, ami2, ami3;
 
     Dashboard() {
         // Frame for Dashboard
@@ -31,20 +32,37 @@ public class Dashboard extends JFrame {
         l4 = new JLabel("Hotel Management System APS");
         l4.setBounds(15, 650, 300, 50);
         l4.setFont(new Font("Times New Roman", Font.BOLD, 15));
-        l4.setForeground(Color.BLACK);
+        l4.setForeground(Color.CYAN);
         img3.add(l4);
 
         //Menu Bar
         m1 = new JMenuBar();
         m1.setBounds(0,0,1366, 30);
-        m1.setBackground(Color.GREEN);
-        m1.setForeground(Color.GREEN);
+        m1.setBackground(Color.WHITE);
         img3.add(m1);
 
         //Menu
-        mb1 = new JMenu("Hotel Management");
-        mb1.setForeground((Color.BLACK));
+        mb1 = new JMenu("HOTEL MANAGEMENT");
+        mb1.setForeground((Color.RED));
         m1.add(mb1);
+
+        mb2 = new JMenu("ADMIN");
+        mb2.setForeground((Color.BLUE));
+        m1.add(mb2);
+
+        //Menu Items
+        mi1 = new JMenuItem("Reception");
+        mb1.add(mi1);
+
+        ami1 = new JMenuItem("Add Employee");
+        mb2.add(ami1);
+
+        ami2 = new JMenuItem("Add Room");
+        mb2.add(ami2);
+
+        ami3 = new JMenuItem("Add Driver");
+        mb2.add(ami3);
+
     }
 
     public static void main(String[] args) {
