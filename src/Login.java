@@ -73,7 +73,7 @@ public class Login extends JFrame implements ActionListener {
         b1.setBounds(110, 250, 90, 30);
         b1.setBackground(Color.BLACK);
         b1.setForeground(Color.WHITE);
-        //b1.addActionListener(this);
+        b1.addActionListener(this);
         img2.add(b1);
 
         //Clear Button
@@ -81,7 +81,7 @@ public class Login extends JFrame implements ActionListener {
         b2.setBounds(230, 250, 90, 30);
         b2.setBackground(Color.BLACK);
         b2.setForeground(Color.WHITE);
-        //b2.addActionListener(this);
+        b2.addActionListener(this);
         img2.add(b2);
 
         //Close button
@@ -95,14 +95,16 @@ public class Login extends JFrame implements ActionListener {
     }
     public void actionPerformed(ActionEvent ae) {
         if (ae.getSource() == b2) {
-            usr.setText("");
-            pass.setText("");
+            usrn.setText("");
+            passw.setText("");
         } else if (ae.getSource() == b3) {
             JOptionPane.showMessageDialog(null, "Contact APS To Recover Password");
             System.exit(0);
         } else if (ae.getSource() == b1) {
-            setVisible(false); // This will hide the login frame
+            setVisible(false);// This will hide the login frame
             // Implement login logic here
+            new Dashboard();
+
         }
     }
     public static void main(String[] args){
