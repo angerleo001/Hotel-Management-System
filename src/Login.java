@@ -36,7 +36,7 @@ public class Login extends JFrame implements ActionListener {
         l2.setForeground(Color.CYAN);
         img1.add(l2);
 
-        l1 = new JLabel("Welcome TO System");
+        l1 = new JLabel("Login TO System");
         l1.setForeground(Color.BLACK);
         l1.setBounds(65,50,350,50);
         l1.setFont(new Font("Osward",Font.BOLD,20));
