@@ -135,15 +135,16 @@ public class AddRoom extends JFrame implements ActionListener{
                     JOptionPane.showMessageDialog(null, "Room Successfully Added");
                     this.setVisible(false);
                     new Dashboard();
-                }catch(Exception ee){
-                    System.out.println(ee);
+                }catch(Exception e){
+                    System.out.println(e);
                 }
             }
             else if(ae.getSource() == b2){
                 this.setVisible(false);
                 new Dashboard();
             }
-        }catch(Exception eee){
+        }catch(Exception e){
+            e.printStackTrace();
         }
     }
 }
