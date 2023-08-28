@@ -8,7 +8,7 @@ public class AddEmp extends JFrame implements ActionListener {
     JLabel l20, img10, img11, nme, age, gdr, job, salary, mail, phone, nagr;
     JTextField Txtn, Txta, Txt3, Txtm, Txtp, Txts, nag;
     JRadioButton Rbm, Rbf, Rbo;
-    JButton nxt;
+    JButton nxt, b2;
     ButtonGroup Bg;
     JComboBox jbc;
     AddEmp(){
@@ -154,66 +154,78 @@ public class AddEmp extends JFrame implements ActionListener {
         Bg.add(Rbf);
         Bg.add(Rbo);
 
-        //Next button
+        //Button
         nxt = new JButton("Submit");
         nxt.setBounds(550, 400, 150, 30);
         nxt.setBackground(Color.BLACK);
         nxt.setForeground(Color.WHITE);
         nxt.addActionListener(this);
         img11.add(nxt);
+
+        b2 = new JButton("Back");
+        b2.addActionListener(this);
+        b2.setBounds(50, 400, 150, 30);
+        b2.setBackground(Color.BLACK);
+        b2.setForeground(Color.WHITE);
+        img11.add(b2);
     }
     public void actionPerformed(ActionEvent ae) {
-        String nm1 = Txtn.getText();
-        String ag1 = Txta.getText();
-        String na1 = nag.getText();
-        String em1 = Txtm.getText();
-        String pn1 = Txtp.getText();
-        String sy1 = Txts.getText();
-        String gr1 = null;
-        if (Rbm.isSelected()) {
-            gr1 = "Male";
-        } else if (Rbf.isSelected()) {
-            gr1 = "Female";
-        } else if (Rbo.isSelected()) {
-            gr1 = "Other";
-        }
-        String jo1 = (String) jbc.getSelectedItem();
+        if (ae.getSource()== nxt) {
+            String nm1 = Txtn.getText();
+            String ag1 = Txta.getText();
+            String na1 = nag.getText();
+            String em1 = Txtm.getText();
+            String pn1 = Txtp.getText();
+            String sy1 = Txts.getText();
+            String gr1 = null;
+            if (Rbm.isSelected()) {
+                gr1 = "Male";
+            } else if (Rbf.isSelected()) {
+                gr1 = "Female";
+            } else if (Rbo.isSelected()) {
+                gr1 = "Other";
+            }
+            String jo1 = (String) jbc.getSelectedItem();
 
-        if (nm1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Name");
-            return;
-        } else if (ag1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Age");
-            return;
-        } else if (na1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Nagrita number");
-            return;
-        } else if (gr1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Gender");
-            return;
-        } else if (jo1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Job");
-            return;
-        } else if (em1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Email");
-            return;
-        } else if (pn1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Phone number");
-            return;
-        } else if (sy1.equals("")) {
-            JOptionPane.showMessageDialog(null, "Empty Salary");
-            return;
-        }
+            if (nm1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Name");
+                return;
+            } else if (ag1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Age");
+                return;
+            } else if (na1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Nagrita number");
+                return;
+            } else if (gr1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Gender");
+                return;
+            } else if (jo1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Job");
+                return;
+            } else if (em1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Email");
+                return;
+            } else if (pn1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Phone number");
+                return;
+            } else if (sy1.equals("")) {
+                JOptionPane.showMessageDialog(null, "Empty Salary");
+                return;
+            }
 
-        try {
-            Connect c = new Connect();
-            String query = "insert into employee values('"+ nm1 +"','"+ ag1 +"','"+ na1 +"','"+ gr1 +"','"+ jo1 +"','"+ em1 +"','"+ pn1 +"','"+ sy1 +"')";
-            c.s.executeUpdate(query);
-            JOptionPane.showMessageDialog(null,"New entry recorded to the system");
+            try {
+                Connect c = new Connect();
+                String query = "insert into employee values('" + nm1 + "','" + ag1 + "','" + na1 + "','" + gr1 + "','" + jo1 + "','" + em1 + "','" + pn1 + "','" + sy1 + "')";
+                c.s.executeUpdate(query);
+                JOptionPane.showMessageDialog(null, "New entry recorded to the system");
+                setVisible(false);
+                new Dashboard();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }else if (ae.getSource() == b2){
             setVisible(false);
             new Dashboard();
-        }catch (Exception e){
-            e.printStackTrace();
         }
     }
     public static void main(String[] args){
