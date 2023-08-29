@@ -16,7 +16,6 @@ public class AddRoom extends JFrame implements ActionListener{
     public AddRoom() {
         //Frame size and location
         setTitle("Add Rooms");
-        //setLocationRelativeTo(null);//Center the frame on the screen
         setSize(1366, 768);
         contentPane = new JPanel();
         setContentPane(contentPane);
