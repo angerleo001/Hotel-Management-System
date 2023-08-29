@@ -55,6 +55,7 @@ public class Dashboard extends JFrame implements ActionListener {
 
         //Menu Items
         mi1 = new JMenuItem("Reception");
+        mi1.addActionListener(this);
         mb1.add(mi1);
 
         ami1 = new JMenuItem("Add Employee");
@@ -67,6 +68,7 @@ public class Dashboard extends JFrame implements ActionListener {
         mb2.add(ami2);
 
         ami3 = new JMenuItem("Add Driver");
+        ami3.addActionListener(this);
         mb2.add(ami3);
     }
     public void actionPerformed(ActionEvent ae){
@@ -76,8 +78,13 @@ public class Dashboard extends JFrame implements ActionListener {
         }else if(ae.getSource() == ami2){
             setVisible(false);
             new AddRoom();
+        }else if (ae.getSource() == ami3){
+            setVisible(false);
+            new AddDriver();
+        }else if (ae.getSource() == mi1){
+            setVisible(false);
+            new Reception();
         }
-
     }
 
     public static void main(String[] args) {
