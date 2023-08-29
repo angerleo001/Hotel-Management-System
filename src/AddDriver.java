@@ -153,7 +153,6 @@ public class AddDriver extends JFrame implements ActionListener{
                     String available = (String)comboBox_1.getSelectedItem();
                     String location = t5.getText();
                     String str = "INSERT INTO driver values( '"+name+"', '"+age+"', '"+gr1+"','"+company+"', '"+brand+"', '"+available+"','"+location+"')";
-
                     c.s.executeUpdate(str);
                     JOptionPane.showMessageDialog(null, "Driver Successfully Added");
                     this.setVisible(false);
