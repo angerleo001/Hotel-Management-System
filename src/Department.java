@@ -5,7 +5,6 @@ import java.sql.*;
 import java.awt.event.*;
 
 public class Department extends JFrame {
-    Connection Connect = null;
     JTable table;
     JLabel lblNewLabel;
     JLabel lblNewLabel_1;
