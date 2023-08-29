@@ -28,8 +28,6 @@ public class AddEmp extends JFrame implements ActionListener {
         add(img10);
 
         ImageIcon i5  = new ImageIcon(ClassLoader.getSystemResource("Icons/img1.png"));
-        //Image i6 = i5.getImage().getScaledInstance(1366, 768,Image.SCALE_DEFAULT);
-        //ImageIcon i7 = new ImageIcon(i6);
         img11 = new JLabel(i5);
         img11.setBounds(300,100,742,448);
         img10.add(img11);
