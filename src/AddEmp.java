@@ -14,7 +14,6 @@ public class AddEmp extends JFrame implements ActionListener {
     AddEmp(){
         //Frame size and location
         setTitle("Employee Addition");
-        //setLocationRelativeTo(null);//Center the frame on the screen
         setSize(1366, 768);
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
