@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.sql.ResultSet;
 
 public class Login extends JFrame implements ActionListener {
-    JLabel l1, l2, l3, img1, img2, usr, pass;
+    JLabel l1, l2, img1, img2, usr, pass;
     JTextField usrn;
     JPasswordField passw;
     JButton b1, b2, b3;
